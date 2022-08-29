@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<html>
+<head>
+    <title>
+        Excel file upload and processing : Django Example : ThePythonDjango.Com
+    </title>
+</head>
+<body>
+<form action="" method="post" enctype="multipart/form-data" style="text-align:center">{% csrf_token %}
+    <h3>Select the file and then enter the anount and then click upload</h3>
+    <input type="file"
+           title="Upload excel file"
+           name="excel_file"
+           style="border: 2px solid black; padding: 5px;"
+           required="required"><br>
+
+    <input type="number" name="nctc" placeholder="CTC">
+    <input type="submit"
+           value="Upload"
+           style="border: 1px solid green; padding:5px; border-radius: 2px; cursor: pointer;">
+
+
+</form>
+
+
+<hr>
+<div >
+    <div style="display:flex;">
+        {% for i in mlist %}
+        <div style="float:left">
+            {% for j in i.keys %}
+            {{j}}<br>
+            {% endfor %}
+        </div>
+        <div style="float:left">
+            {% for k in i.values %}
+            {{k}}<br>
+            {% endfor %}
+        </div>
+
+
+        {% endfor %}
+    </div>
+    <hr>
+
+    <div style="float:left">
+        {% for q in newlist %}
+        <h1>Amount that Entered</h1>
+        <div style="float:left">
+            {% for x in q.keys %}
+            {{x}}<br>
+            {% endfor %}
+        </div>
+
+        <div style="float:left">
+            {% for w in q.values %}
+            {{w}}<br>
+            {% endfor %}
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+</body>
+</html>
+</body>
+</html>
